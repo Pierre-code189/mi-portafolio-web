@@ -1,0 +1,365 @@
+/* --- Variables Tecnológicas (Modo Oscuro) --- */
+:root {
+  --fondo-oscuro: #0f172a;
+  --panel-oscuro: #1e293b;
+  --acento-neon: #0ea5e9;
+  --texto-claro: #f8fafc;
+  --texto-gris: #cbd5e1;
+  --color-borde: #334155;
+  --sombra-panel: rgba(0, 0, 0, 0.3);
+
+  /* NUEVAS: Fondos dinámicos para los detalles */
+  --bg-navbar: rgba(30, 41, 59, 0.85);
+  --bg-lateral: rgba(15, 23, 42, 0.5);
+  --bg-input: #0f172a;
+}
+
+/* --- Paleta de Modo Claro --- */
+body.modo-claro {
+  --fondo-oscuro: #f8fafc;
+  --panel-oscuro: #ffffff;
+  --acento-neon: #0284c7;
+  --texto-claro: #0f172a;
+  --texto-gris: #475569;
+  --color-borde: #e2e8f0;
+  --sombra-panel: rgba(0, 0, 0, 0.05);
+
+  /* NUEVAS: Fondos claros para los detalles */
+  --bg-navbar: rgba(255, 255, 255, 0.90);
+  --bg-lateral: #f1f5f9; /* Gris azulado muy elegante */
+  --bg-input: #ffffff;
+}
+
+/* (Tu regla "html" y "body" siguen aquí igual) */
+
+html { scroll-behavior: smooth; }
+
+body {
+  /* ¡MAGIA!: Ahora el fondo usa las variables, así que cambiará solo */
+  background: radial-gradient(circle at center, var(--panel-oscuro) 0%, var(--fondo-oscuro) 100%);
+  color: var(--texto-claro);
+  margin: 0;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+  min-height: 100vh;
+  /* Una transición suave para que el cambio de color no lastime los ojos */
+  transition: background 0.5s ease, color 0.5s ease; 
+}
+
+/* --- Barra de Navegación Superior --- */
+.barra-navegacion {
+  width: 100%;
+  height: 70px;
+  background-color: var(--bg-navbar);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #334155;
+  z-index: 1000;
+}
+
+/* Botón de menú (Oculto en PC por defecto) */
+.boton-menu {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--acento-neon);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.boton-menu:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px rgba(14, 165, 233, 0.6);
+}
+
+.logo-nav {
+  color: var(--acento-neon);
+  font-size: 2rem;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(14, 165, 233, 0.4);
+}
+
+.links-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 30px;
+}
+
+.links-nav a {
+  color: var(--texto-gris);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.links-nav a:hover {
+  color: var(--acento-neon);
+  text-shadow: 0 0 8px rgba(14, 165, 233, 0.6);
+}
+
+/* --- Contenido Principal --- */
+.contenido-principal {
+  width: 100%;
+  padding-top: 70px;
+}
+
+.seccion-pantalla {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* --- Tarjeta de Inicio --- */
+.tarjeta-principal {
+  background-color: var(--panel-oscuro);
+  padding: 50px 80px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid var(--color-borde);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* 1. Animación: Tarjeta Flotante */
+.flotante {
+  animation: levitar 4s ease-in-out infinite;
+}
+
+@keyframes levitar {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 2. Animación: Pulso Neón en la Foto */
+.foto-perfil {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--acento-neon);
+  margin-bottom: 15px;
+}
+
+.pulso {
+  animation: latido-neon 2s infinite;
+}
+
+@keyframes latido-neon {
+  0% { box-shadow: 0 0 10px rgba(14, 165, 233, 0.4); }
+  50% { box-shadow: 0 0 30px rgba(14, 165, 233, 0.8); }
+  100% { box-shadow: 0 0 10px rgba(14, 165, 233, 0.4); }
+}
+
+.texto-neon {
+  color: var(--acento-neon);
+  text-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+}
+
+.tarjeta-principal h1 {
+  margin-bottom: 5px;
+  font-size: 2.8rem;
+}
+
+.subtitulo {
+  color: var(--texto-gris);
+  font-size: 1.2rem;
+  margin-top: 0;
+  letter-spacing: 1px;
+}
+
+/* 3. Estilos de los Botones de Inicio */
+.botones-inicio {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.btn-primario, .btn-secundario {
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primario {
+  background-color: var(--acento-neon);
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+}
+
+.btn-primario:hover {
+  background-color: #0284c7;
+  box-shadow: 0 0 25px rgba(14, 165, 233, 0.8);
+  transform: translateY(-3px);
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: var(--acento-neon);
+  border: 2px solid var(--acento-neon);
+}
+
+.btn-secundario:hover {
+  background-color: rgba(14, 165, 233, 0.1);
+  transform: translateY(-3px);
+}
+
+/* --- FASE 2: Animaciones de Scroll Tecnológicas --- */
+
+/* 1. Estado inicial (escondido abajo y desenfocado) */
+.oculto {
+  opacity: 0;
+  transform: translateY(80px); /* Empieza 80px más abajo */
+  filter: blur(8px); /* Efecto de desenfoque moderno */
+  transition: all 1s cubic-bezier(0.25, 1, 0.5, 1); /* Una transición ultra suave */
+}
+
+/* 2. Estado final (cuando el sensor lo detecta y lo muestra) */
+.mostrar {
+  opacity: 1;
+  transform: translateY(0); /* Sube a su posición original */
+  filter: blur(0); /* Se enfoca perfectamente */
+}
+
+/* --- FASE 3, Parte 1: Efecto Máquina de Escribir --- */
+
+/* El contenedor del texto que se va a animar */
+.maquina-escribir {
+  display: inline-block; /* Para que el ancho se ajuste al texto */
+  overflow: hidden; /* Esconde el texto que aún no se "escribe" */
+  border-right: 3px solid var(--acento-neon); /* El cursor parpadeante */
+  white-space: nowrap; /* Mantiene todo el texto en una sola línea */
+  margin: 0 auto; /* Lo centra */
+  letter-spacing: 2px; /* Un poco de espacio para estilo tecnológico */
+  
+  /* Las dos animaciones: escribir y parpadear el cursor */
+  animation: 
+    escribir 3.5s steps(30, end), 
+    parpadear-cursor 0.75s step-end infinite;
+    
+  max-width: fit-content; /* Asegura que se ajuste al contenido */
+}
+
+/* La animación que hace crecer el ancho de 0 a 100% */
+@keyframes escribir {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* La animación que hace que la barrita lateral aparezca y desaparezca */
+@keyframes parpadear-cursor {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--acento-neon); }
+}
+
+/* --- Diseño Global para Títulos de Sección --- */
+.titulo-seccion {
+  font-size: 2.8rem; /* Letra mucho más grande e imponente */
+  color: var(--texto-claro);
+  margin-top: 0;
+  margin-bottom: 60px; /* Buen espacio para separar el título de las tarjetas */
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+/* Rayita neón elegante debajo de cada título */
+.titulo-seccion::after {
+  content: '';
+  position: absolute;
+  width: 80px; /* Ancho de la rayita */
+  height: 4px;
+  background-color: var(--acento-neon);
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%); /* Centra la rayita perfectamente */
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.5); /* Resplandor tecnológico */
+}
+
+/* --- ADAPTACIÓN PARA CELULARES (RESPONSIVE) --- */
+@media (max-width: 768px) {
+  /* La barra ahora mantiene el logo a la izquierda y el botón a la derecha */
+  .barra-navegacion {
+    padding: 10px 25px;
+    justify-content: space-between;
+  }
+  
+  /* Mostramos el botón de hamburguesa */
+  .boton-menu {
+    display: block; 
+  }
+
+  /* Escondemos los enlaces por defecto y los preparamos para ser un menú vertical */
+  .links-nav {
+    position: absolute;
+    top: 70px; /* Se despliega justo debajo de la barra */
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-navbar); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(15px);
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    border-bottom: 2px solid var(--acento-neon);
+    
+    /* Efecto de ocultar/mostrar deslizando */
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.4s ease-in-out;
+  }
+
+  /* Cuando hacemos clic, esta clase se activa y "despliega" el menú */
+  .links-nav.abierto {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .links-nav li {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #334155;
+  }
+
+  .links-nav a {
+    display: block;
+    padding: 20px 0;
+  }
+
+  /* El resto de ajustes que ya tenías para celular */
+  .contenido-principal {
+    padding-top: 100px;
+  }
+  .tarjeta-principal {
+    padding: 30px 20px;
+    width: 90%;
+  }
+  .tarjeta-principal h1 {
+    font-size: 2rem;
+  }
+  .botones-inicio {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-primario, .btn-secundario {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .maquina-escribir {
+    font-size: 0.9rem;
+  }
+}

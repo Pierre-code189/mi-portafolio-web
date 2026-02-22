@@ -1,0 +1,166 @@
+/* --- Contenedor Principal --- */
+.seccion-proyectos {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* --- La Cuadrícula de Tarjetas --- */
+.grid-proyectos {
+  display: grid;
+  /* Esto hace que las tarjetas se acomoden solas dependiendo del tamaño de la pantalla */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* --- Cada Tarjeta Individual --- */
+.tarjeta-proyecto {
+  background-color: var(--panel-oscuro);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid var(--color-borde);
+  text-align: left;
+  /* La sombra cambia dependiendo si es modo claro u oscuro */
+  box-shadow: 0 10px 30px var(--sombra-panel);
+}
+
+.tarjeta-proyecto h3 {
+  color: var(--texto-claro);
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.tarjeta-proyecto p {
+  color: var(--texto-gris);
+  line-height: 1.6;
+}
+
+.btn-detalles {
+  background: transparent;
+  border: none;
+  color: var(--acento-neon);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.btn-detalles:hover {
+  text-decoration: underline;
+}
+
+/* --- EL MODAL (Fondo y Caja) --- */
+.modal-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-contenido {
+  background-color: var(--panel-oscuro);
+  width: 90%;
+  max-width: 650px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--color-borde);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.btn-cerrar {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-cerrar:hover {
+  background-color: var(--acento-neon);
+}
+
+.modal-imagen {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.modal-info {
+  padding: 30px;
+  text-align: left;
+}
+
+.modal-info h3 {
+  color: var(--texto-claro);
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+.modal-descripcion {
+  color: var(--texto-gris);
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+/* --- Tecnologías (Badges) --- */
+.modal-tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Separación entre las etiquetas */
+  margin: 20px 0;
+}
+
+.tech-badge {
+  background-color: rgba(14, 165, 233, 0.1);
+  color: var(--acento-neon);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* --- Botones del Modal --- */
+.modal-botones {
+  display: flex;
+  gap: 15px; /* SEPARACIÓN ENTRE LOS BOTONES */
+  margin-top: 25px;
+}
+
+/* --- Adaptación Celulares --- */
+@media (max-width: 768px) {
+  .grid-proyectos {
+    grid-template-columns: 1fr; /* Una sola columna en celular */
+  }
+  .modal-contenido {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .modal-botones {
+    flex-direction: column; /* Apila los botones en celular */
+  }
+  .modal-botones a {
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

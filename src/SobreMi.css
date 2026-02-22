@@ -1,0 +1,84 @@
+/* --- Estructura Principal --- */
+.contenedor-sobremi {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+/* La tarjeta que agrupa texto y habilidades */
+.contenido-sobremi {
+  display: flex;
+  gap: 50px;
+  background-color: var(--panel-oscuro);
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid var(--color-borde);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  align-items: center;
+}
+
+/* --- Columna de Texto --- */
+.texto-sobremi {
+  flex: 1; /* Ocupa la mitad del espacio */
+}
+
+.texto-sobremi p {
+  color: var(--texto-gris);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* --- Columna de Habilidades --- */
+.habilidades-sobremi {
+  flex: 1; /* Ocupa la otra mitad */
+}
+
+.habilidades-sobremi h3 {
+  color: var(--texto-claro);
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+}
+
+.grid-habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Los botones neón de las habilidades */
+.badge-habilidad {
+  background-color: rgba(14, 165, 233, 0.1);
+  color: var(--acento-neon);
+  border: 1px solid var(--acento-neon);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.badge-habilidad:hover {
+  background-color: var(--acento-neon);
+  color: white;
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
+  transform: translateY(-3px);
+}
+
+/* --- ADAPTACIÓN PARA CELULARES --- */
+@media (max-width: 768px) {
+  .contenido-sobremi {
+    flex-direction: column; /* Apila el texto y las habilidades */
+    padding: 30px 20px;
+    gap: 30px;
+  }
+  .grid-habilidades {
+    justify-content: center; /* Centra los botones en el celular */
+  }
+  .habilidades-sobremi h3 {
+    text-align: center;
+  }
+}

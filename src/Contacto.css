@@ -1,0 +1,179 @@
+.seccion-contacto {
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.descripcion-contacto {
+  color: var(--texto-gris);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+/* --- Estructura Dividida --- */
+.tarjeta-contacto-grid {
+  display: flex;
+  background-color: var(--panel-oscuro);
+  border: 1px solid var(--color-borde);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden; /* Mantiene las esquinas redondeadas */
+}
+
+/* --- Columna Izquierda --- */
+.info-contacto-lateral {
+  flex: 1;
+  background-color: var(--bg-lateral); /* Más oscuro para contrastar */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-right: 1px solid #334155;
+  text-align: left;
+}
+
+.item-info-lateral {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icono {
+  font-size: 1.5rem;
+  background-color: rgba(14, 165, 233, 0.1);
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.2);
+}
+
+.item-info-lateral h4 {
+  margin: 0 0 5px 0;
+  color: var(--texto-claro);
+  font-size: 1.1rem;
+}
+
+.item-info-lateral p {
+  margin: 0;
+  color: var(--texto-gris);
+  font-size: 0.95rem;
+}
+
+.redes-contacto {
+  display: flex;
+  gap: 15px;
+  margin-top: auto; /* Empuja los botones al fondo */
+}
+
+.btn-whatsapp-pequeno, .btn-linkedin-pequeno {
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  flex: 1;
+}
+
+.btn-whatsapp-pequeno {
+  color: #25D366;
+  border: 1px solid #25D366;
+}
+.btn-whatsapp-pequeno:hover {
+  background-color: rgba(37, 211, 102, 0.1);
+}
+
+.btn-linkedin-pequeno {
+  color: var(--texto-claro);
+  border: 1px solid var(--color-borde);
+}
+.btn-linkedin-pequeno:hover {
+  border-color: var(--acento-neon);
+  color: var(--acento-neon);
+}
+
+/* --- Columna Derecha (Formulario) --- */
+.formulario-contacto {
+  flex: 1.5; /* Ocupa un poco más de espacio que la información */
+  padding: 40px;
+}
+
+.form-diseño {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.grupo-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grupo-input label {
+  color: var(--texto-claro);
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+/* Diseño de las cajas de texto */
+.grupo-input input, .grupo-input textarea {
+  background-color: var(--bg-input);
+  border: 1px solid var(--color-borde);
+  color: var(--texto-claro);
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+/* Efecto al hacer clic en las cajas */
+.grupo-input input:focus, .grupo-input textarea:focus {
+  border-color: var(--acento-neon);
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
+}
+
+.btn-enviar-form {
+  background-color: var(--acento-neon);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-enviar-form:hover {
+  background-color: #0284c7;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+}
+
+.mensaje-exito {
+  color: #22c55e;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* --- ADAPTACIÓN PARA CELULARES --- */
+@media (max-width: 768px) {
+  .tarjeta-contacto-grid {
+    flex-direction: column; /* Pone el formulario debajo de la información */
+  }
+  .info-contacto-lateral {
+    border-right: none;
+    border-bottom: 1px solid #334155;
+    padding: 30px 20px;
+  }
+  .formulario-contacto {
+    padding: 30px 20px;
+  }
+}
