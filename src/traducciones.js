@@ -3,7 +3,7 @@ export const textos = {
     nav: { inicio: "Inicio", sobreMi: "Sobre Mí", proyectos: "Proyectos", contacto: "Contacto" },
     inicio: {
       saludo: "Hola, soy",
-      frases: ["Creando soluciones modernas", "Futuro Ingeniero de Sistemas", "Desarrollador Web, Creando magia web ✨"],
+      frases: ["Creando soluciones modernas", "Futuro Ingeniero de Sistemas", "Desarrollador Web", "Creando magia web ✨"],
       btnProyectos: "Ver Proyectos", btnContacto: "Contactarme"
     },
     sobreMi: {
